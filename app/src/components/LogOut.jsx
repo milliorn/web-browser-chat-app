@@ -12,7 +12,7 @@ const LogOut = () => {
 
   return (
     <button onClick={() => auth.signOut()} className={style.button}>
-      Sign Out
+      Logout
     </button>
   );
 };
