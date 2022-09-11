@@ -1,4 +1,7 @@
 import "./App.css";
+import Navbar from "./components/Navbar";
+import { auth } from "./firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const style = {
   appContainer: `max-w-3xl	mx-auto text-center`,
@@ -6,9 +9,14 @@ const style = {
 };
 
 function App() {
+  const [user] = useAuthState(auth);
+  console.log(user);
+
   return (
     <div className={style.appContainer}>
-      <section className={style.sectionContainer}></section>
+      <section className={style.sectionContainer}>
+        <Navbar />
+      </section>
     </div>
   );
 }
