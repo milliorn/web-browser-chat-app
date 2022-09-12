@@ -12,13 +12,12 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const scroll = useRef();
 
-  /* Any change to our data we render in real time */
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("timestamp"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let messages = [];
-      querySnapshot.forEach((e) => {
-        messages.push({ ...e.data(), id: e.id });
+      querySnapshot.forEach((doc) => {
+        messages.push({ ...doc.data(), id: doc.id });
       });
       setMessages(messages);
     });
@@ -33,8 +32,7 @@ const Chat = () => {
             <Message key={message.id} message={message} />
           ))}
       </main>
-      {/* Send Message */}
-      <SendMessage />
+      <SendMessage scroll={scroll} />
       <span ref={scroll}></span>
     </>
   );

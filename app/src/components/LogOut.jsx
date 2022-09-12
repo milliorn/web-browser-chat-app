@@ -6,6 +6,7 @@ const style = {
 };
 
 const LogOut = () => {
+  // eslint-disable-next-line no-unused-vars
   const signOut = () => {
     signOut(auth);
   };
