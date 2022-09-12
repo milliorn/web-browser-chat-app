@@ -15,12 +15,24 @@ const Message = ({ message }) => {
       : `${style.received}`;
 
   return (
-    <div>
-      <div className={`${style.message} ${messageClass}`}>
-        <p className={style.name}>{message.name}</p>
-        <p>{message.text}</p>
+    <>
+      <div>
+        <div className={`${style.message} ${messageClass}`}>
+          <p className={style.name}>
+            {message.name}
+            {" @ "}
+            {new Date(message.timestamp.seconds * 1000)
+              .toLocaleDateString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              })
+              .split("GMT")}
+          </p>
+          <p>{message.text}</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

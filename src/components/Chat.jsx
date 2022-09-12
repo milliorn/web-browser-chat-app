@@ -6,7 +6,7 @@ import Message from "./Message";
 import SendMessage from "./SendMessage";
 
 const style = {
-  main: `flex flex-col p-2.5`,
+  main: `flex flex-col p-2.5 text-2xl`,
 };
 
 const Chat = () => {
