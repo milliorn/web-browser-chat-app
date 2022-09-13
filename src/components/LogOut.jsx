@@ -1,21 +1,22 @@
-import React from "react";
-import { auth } from "../firebase";
+import React from 'react'
+import { auth } from '../firebase'
 
 const style = {
-  button: `bg-gray-200 px-4 py-2 hover:bg-gray-100`,
-};
+    button: `bg-gray-200 px-4 py-2 hover:bg-gray-100`
+}
+
 
 const LogOut = () => {
-  // eslint-disable-next-line no-unused-vars
-  const signOut = () => {
-    signOut(auth);
-  };
+// eslint-disable-next-line no-unused-vars
+const signOut = () => {
+    signOut(auth)
+}
 
   return (
     <button onClick={() => auth.signOut()} className={style.button}>
-      Logout
+        Logout
     </button>
-  );
-};
+  )
+}
 
-export default LogOut;
+export default LogOut
